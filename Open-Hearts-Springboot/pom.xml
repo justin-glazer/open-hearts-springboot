@@ -11,9 +11,8 @@
 	<groupId>open-hearts-springboot</groupId>
 	<artifactId>open-hearts-springboot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
 	<name>open-hearts-springboot</name>
-	<description>API for Minigame for Open Hearts Website</description>
+	<description>Springboot RESTful API for Open Hearts Minigame</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -36,11 +35,6 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>provided</scope>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
