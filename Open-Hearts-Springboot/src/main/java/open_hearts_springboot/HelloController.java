@@ -13,7 +13,7 @@ import org.springframework.http.ResponseEntity;
 @CrossOrigin(origins = "http://localhost:3000")
 
 public class HelloController {
-	@GetMapping("/")
+	@GetMapping("/hello")
 	public ResponseEntity<String> fetchData() {
 		return ResponseEntity.ok("Greetings from Spring Boot!");
 	}
