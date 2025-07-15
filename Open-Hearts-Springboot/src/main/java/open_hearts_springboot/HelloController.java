@@ -2,6 +2,7 @@ package open_hearts_springboot;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.http.ResponseEntity;
@@ -22,10 +23,14 @@ public class HelloController {
 		return ResponseEntity.ok("Greetings from Spring Boot!");
 	}
 
-	// @GetMapping("/test")
-	// public ResponseEntity<String> testPerson() {
-	// 	return ResponseEntity.ok();
-	// }
+	@GetMapping("/test")
+	public ResponseEntity<String> testPerson(@RequestBody Profile data) {
+		if (data.isScammer()){
+			return ResponseEntity.ok(data.getName());
+		} else{
+			return ResponseEntity.ok(data.getMessageOne());
+		}
+	}
 	
 
 }
