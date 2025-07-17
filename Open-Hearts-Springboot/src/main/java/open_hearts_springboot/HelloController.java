@@ -26,14 +26,19 @@ public class HelloController {
 		return ResponseEntity.ok("Greetings from Spring Boot!");
 	}
 
-	@PostMapping("/test")
-	public ResponseEntity<String> testPerson(@RequestBody String data) {
+	@PostMapping("/testOne")
+	public ResponseEntity<String> testPerson1(@RequestBody String data) {
+		return ResponseEntity.ok(data);
+	}
+	
+
+	@PostMapping("/testTwo")
+	public ResponseEntity<String> testPerson2(@RequestBody String data1, String data2) {
 		int x = (int) (Math.random()*2);
-		System.out.println(x);
 		if (x == 1){
-			return ResponseEntity.ok("One for da Win");
+			return ResponseEntity.ok(data1);
 		} else{
-			return ResponseEntity.ok(data);
+			return ResponseEntity.ok(data2);
 		}
 	}
 	
