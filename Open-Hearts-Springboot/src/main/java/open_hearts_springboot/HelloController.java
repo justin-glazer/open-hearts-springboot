@@ -1,18 +1,12 @@
 package open_hearts_springboot;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
-
-
-
-
-
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
@@ -30,17 +24,14 @@ public class HelloController {
 	public ResponseEntity<String> testPerson1(@RequestBody String data) {
 		return ResponseEntity.ok(data);
 	}
-	
 
 	@PostMapping("/testTwo")
-	public ResponseEntity<String> testPerson2(@RequestBody String data1, String data2) {
-		int x = (int) (Math.random()*2);
-		if (x == 1){
-			return ResponseEntity.ok(data1);
-		} else{
-			return ResponseEntity.ok(data2);
+	public ResponseEntity<String> testPerson2(@RequestBody Profile profile) {
+		if (profile.isScammer()) {
+			return ResponseEntity.ok("Scammer detected!");
+		} else {
+			return ResponseEntity.ok(profile.getMessageOne());
 		}
 	}
-	
 
 }
