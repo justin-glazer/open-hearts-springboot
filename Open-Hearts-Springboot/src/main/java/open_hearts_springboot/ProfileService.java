@@ -51,19 +51,19 @@ public class ProfileService {
 
         // Sample Profile 2: Sarah Lin (Real Person)
         Map<String, List<String>> sarahDialogues = new HashMap<>();
-        sarahDialogues.put("option1", Arrays.asList(
+        sarahDialogues.put("option0", Arrays.asList(
             "I work in epidemiology, mostly managing data for community health programs. Lately I’ve been coordinating with local clinics to track chronic illness trends.",
             "Right now I’m helping build out a tool that maps out neighborhood-level health data, so we can focus outreach better. It’s not flashy, but I like it a lot!"
         ));
-        sarahDialogues.put("option2", Arrays.asList(
+        sarahDialogues.put("option1", Arrays.asList(
             "Sure, I’m down for a quick call! Just give me a few minutes to get ready.",
             "Alright, see you in 5 minutes!!"
         ));
-        sarahDialogues.put("option3", Arrays.asList(
+        sarahDialogues.put("option2", Arrays.asList(
             "I’m in Alexandria actually, right outside DC. I love going to the waterfront on weekends, especially when it’s quiet in the mornings.",
             "Definitely! There’s a place called Luna that I go to way too often. If you like to drink coffee or study in a cozy spot, it’s perfect!"
         ));
-        sarahDialogues.put("option4", Arrays.asList(
+        sarahDialogues.put("option3", Arrays.asList(
             "I’m looking to get to know someone over time, through multiple dates and conversations. I’d really like to understand the other person before I think about committing to a relationship. How about you?",
             "Exactly! Talking about dates, would you like to meet up at Luna sometime?"
         ));
