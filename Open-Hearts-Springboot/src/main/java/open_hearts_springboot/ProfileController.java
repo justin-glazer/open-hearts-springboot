@@ -38,4 +38,15 @@ public class ProfileController {
         List<String> dialogue = profileService.getDialogueBranch(profileId, option);
         return ResponseEntity.ok(dialogue);
     }
+
+    /*
+	 * Retrieves full list of profile-specific user options for the initial menu
+	 */
+	@GetMapping("/dialogue")
+    public ResponseEntity<List<String>> getUserOptions(
+		@RequestParam int profileId
+    ) {
+        List<String> userOptions = profileService.getUserOptions(profileId);
+        return ResponseEntity.ok(userOptions);
+    }
 }

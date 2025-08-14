@@ -47,7 +47,15 @@ public class ProfileService {
             "Philanthropy (talks about wanting to give back, start a foundation someday)",
             "Watching documentaries"
         );
-        Profile michaelCarter = new Profile("Michael Carter", true, michaelDialogues, 0, 46, michaelHobbies, "Houston, Texas", "International Civil Engineer");
+
+        List<String> michaelOptions = Arrays.asList(
+            "Hey there Michael! I see that you're an international civil engineer. What exactly do you do for work?",
+            "Hi, nice to meet you Michael! Do you want to do a video call to get to know each other?",
+            "Great to meet you! I see you're abroad in Turkey–would you mind sending a few photos of what it's like over there?",
+            "What are you looking for in a relationship?"
+        );
+
+        Profile michaelCarter = new Profile("Michael Carter", true, michaelDialogues, michaelOptions, 0, 46, michaelHobbies, "Houston, Texas", "International Civil Engineer");
 
         // Sample Profile 2: Sarah Lin (Real Person)
         Map<String, List<String>> sarahDialogues = new HashMap<>();
@@ -78,7 +86,14 @@ public class ProfileService {
             "Road trips"
         );
 
-        Profile sarahLin = new Profile("Sarah Lin", false, sarahDialogues, 1, 31, sarahHobbies, "Arlington, Virginia", "Epidemiologist");
+        List<String> sarahOptions = Arrays.asList(
+            "Hey there Sarah! I see that you’re an Epidemiologist. What exactly do you do for work?",
+            "Hi, nice to meet you Sarah! Do you want to do a video call to get to know each other?",
+            "Great to meet you! I see you’re located in Arlington, VA–would you mind sending a few photos of what it’s like over there>",
+            "What are you looking for in a relationship?"
+        );
+
+        Profile sarahLin = new Profile("Sarah Lin", false, sarahDialogues, sarahOptions, 1, 31, sarahHobbies, "Arlington, Virginia", "Epidemiologist");
 
         // Sample Profile 3: Gabby Alonso (Scammer)
         Map<String, List<String>> gabbyDialogues = new HashMap<>();
@@ -106,7 +121,14 @@ public class ProfileService {
             "Volunteering and tech community work by leading tech education programs for young girls"
         );
 
-        Profile gabbyAlonso = new Profile("Gabby Alonso", true, gabbyDialogues, 2, 25, gabbyHobbies, "Madrid, Spain", "Software Engineer");
+        List<String> gabbyOptions = Arrays.asList(
+            "Hey there Gabby! I see that you’re a software engineer. What exactly do you do for work?",
+                "Hi, nice to meet you Gabby! Do you want to do a video call to get to know each other?",
+                "Great to meet you! I see you’re abroad in Madrid–would you mind sending a few photos of what it’s like over there?",
+                "What are you looking for in a relationship?"
+        );
+
+        Profile gabbyAlonso = new Profile("Gabby Alonso", true, gabbyDialogues, gabbyOptions, 2, 25, gabbyHobbies, "Madrid, Spain", "Software Engineer");
 
          // Sample Profile 4: Daniel Rivera (Real Person)
         Map<String, List<String>> danielDialogues = new HashMap<>();
@@ -137,7 +159,14 @@ public class ProfileService {
             "Watching documentaries"
         );
 
-        Profile danielRivera = new Profile("Daniel Rivera", false, danielDialogues, 3, 34, danielHobbies, "Seattle, Washington", "Software Developer at mid-sized healthcare startup");
+        List<String> danielOptions = Arrays.asList(
+            "Hey there Daniel! I see that you’re a software developer at a healthcare startup! What exactly do you do for work?",
+                "Hi, nice to meet you Daniel! Do you want to do a video call to get to know each other?",
+                "Great to meet you! I see you’re located in Seattle–would you mind sending a few photos of what it’s like over there?",
+                "What are you looking for in a relationship?"
+        );
+
+        Profile danielRivera = new Profile("Daniel Rivera", false, danielDialogues, danielOptions, 3, 34, danielHobbies, "Seattle, Washington", "Software Developer at mid-sized healthcare startup");
 
         // Add profiles
         profiles.put(0, michaelCarter);
@@ -165,6 +194,11 @@ public class ProfileService {
     public Profile getRandomProfile() {
         int index = random.nextInt(profiles.size());
         return profiles.get(index);
+    }
+
+    public List<String> getUserOptions(int profileId) {
+        Profile profile = getProfileById(profileId);
+        return profile.getUserOptions();
     }
 }
 
