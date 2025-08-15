@@ -42,7 +42,7 @@ public class ProfileController {
     /*
 	 * Retrieves full list of profile-specific user options for the initial menu
 	 */
-	@GetMapping("/dialogue")
+	@GetMapping("/userOptions")
     public ResponseEntity<List<String>> getUserOptions(
 		@RequestParam int profileId
     ) {
