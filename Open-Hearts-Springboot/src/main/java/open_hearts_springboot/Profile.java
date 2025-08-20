@@ -13,6 +13,11 @@ public class Profile {
     private boolean scammer; //bool for if they are a scammer or not
     Map<String, List<String>> dialogues; // Holds all dialogues for this profile
     List<String> userOptions; // Holds all user options for this profile
+    /*
+     * Holds a list for every conversation the user can have with this profile
+     * Each list contains pairs of user responses to profile dialogue, represented
+     * by the Responses class
+     */
     List<List<Responses>> userResponses;
 
     public Profile() {
