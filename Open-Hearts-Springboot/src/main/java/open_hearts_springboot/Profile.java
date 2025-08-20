@@ -13,6 +13,7 @@ public class Profile {
     private boolean scammer; //bool for if they are a scammer or not
     Map<String, List<String>> dialogues; // Holds all dialogues for this profile
     List<String> userOptions; // Holds all user options for this profile
+    List<List<Responses>> userResponses;
 
     public Profile() {
         this.name = "";
@@ -24,9 +25,10 @@ public class Profile {
         this.location = "";
         this.career = "";
         this.userOptions = new ArrayList<>();
+        this.userResponses = new ArrayList<>();
     }
 
-    public Profile(String name, boolean scammer, Map<String, List<String>> dialogues, List<String> userOptions, int profileId, int age, List<String> hobbies, String location, String career) {
+    public Profile(String name, boolean scammer, Map<String, List<String>> dialogues, List<String> userOptions, List<List<Responses>> userResponses, int profileId, int age, List<String> hobbies, String location, String career) {
         this.name = name;
         this.scammer = scammer;
         this.dialogues = dialogues;
@@ -36,6 +38,7 @@ public class Profile {
         this.location = location;
         this.career = career;
         this.userOptions = userOptions;
+        this.userResponses = userResponses;
     }
 
     public String getName() {
@@ -80,6 +83,10 @@ public class Profile {
 
     public List<String> getUserOptions() {
         return this.userOptions;
+    }
+
+    public List<List<Responses>> getUserResponses() {
+        return this.userResponses;
     }
 }
 

@@ -55,7 +55,54 @@ public class ProfileService {
             "What are you looking for in a relationship?"
         );
 
-        Profile michaelCarter = new Profile("Michael Carter", true, michaelDialogues, michaelOptions, 0, 46, michaelHobbies, "Houston, Texas", "International Civil Engineer");
+        List<Responses> michaelResponses0 = Arrays.asList(
+            new Responses(
+                "Wow, sounds awesome! What exactly are you doing in the project? Is it a public project you’d be willing to share more details on?",
+                "That sounds great, but a little vague. What’s your role in this project?"
+            ),
+            new Responses(
+                "That does sound really stressful, any way I could help?",
+                "Oh no, what's wrong?"
+            ),
+            new Responses(
+                "What’s going on? Are you okay?",
+                "That sounds serious. What happened?"
+            ),
+            new Responses(
+                "Umm…I don’t think I’m comfortable with sending money to a stranger",
+                "I don’t think so…"
+            )
+        );
+
+        List<Responses> michaelResponses1 = Arrays.asList(
+            new Responses(
+                "That’s alright. Even with a bad connection, it would still be nice to see each other.",
+                "Totally get it. Maybe just an audio call then?"
+            )
+        );
+
+        List<Responses> michaelResponses2 = Arrays.asList(
+            new Responses(
+                "Even just one would be cool. I’ve always wanted to see Turkey.",
+                "Could you send a selfie too? Just curious who I’m talking to."
+            )
+        );
+
+        List<Responses> michaelResponses3 = Arrays.asList(
+            new Responses(
+                "I’m not sure if we should be rushing into things, we’ve barely even talked!",
+                "I think we should take more time to get to know each other."
+            )
+        );
+
+        List<List<Responses>> michaelResponsesAll = Arrays.asList(
+            michaelResponses0,
+            michaelResponses1,
+            michaelResponses2,
+            michaelResponses3
+        );
+
+        Profile michaelCarter = new Profile("Michael Carter", true, michaelDialogues, michaelOptions, michaelResponsesAll, 0, 46, michaelHobbies, "Houston, Texas", "International Civil Engineer");
 
         // Sample Profile 2: Sarah Lin (Real Person)
         Map<String, List<String>> sarahDialogues = new HashMap<>();
@@ -93,7 +140,46 @@ public class ProfileService {
             "What are you looking for in a relationship?"
         );
 
-        Profile sarahLin = new Profile("Sarah Lin", false, sarahDialogues, sarahOptions, 1, 31, sarahHobbies, "Arlington, Virginia", "Epidemiologist");
+        List<Responses> sarahResponses0 = Arrays.asList(
+            new Responses(
+                "Very cool! What’s your role in all of that?",
+                "That sounds really interesting! What kind of programs are you working on right now?"
+            )
+        );
+
+        List<Responses> sarahResponses1 = Arrays.asList(
+            new Responses(
+                "Sure thing!",
+                "Sounds good!"
+            )
+        );
+
+        List<Responses> sarahResponses2 = Arrays.asList(
+            new Responses(
+                "That sounds really nice. Any favorite coffee shops?",
+                "I’ve been meaning to explore that area more. Any recommendations?"
+            )
+        );
+
+        List<Responses> sarahResponses3 = Arrays.asList(
+            new Responses(
+                "That sounds similar to what I’m looking for!",
+                "That makes sense, it’s good to know the other person really well and not rush into a relationship."
+            ),
+            new Responses(
+                "Yes, that sounds great! When are you free?",
+                "That sounds amazing! Let’s discuss a date and time."
+            )
+        );
+
+        List<List<Responses>> sarahResponsesAll = Arrays.asList(
+            sarahResponses0,
+            sarahResponses1,
+            sarahResponses2,
+            sarahResponses3
+        );
+
+        Profile sarahLin = new Profile("Sarah Lin", false, sarahDialogues, sarahOptions, sarahResponsesAll, 1, 31, sarahHobbies, "Arlington, Virginia", "Epidemiologist");
 
         // Sample Profile 3: Gabby Alonso (Scammer)
         Map<String, List<String>> gabbyDialogues = new HashMap<>();
@@ -128,7 +214,50 @@ public class ProfileService {
                 "What are you looking for in a relationship?"
         );
 
-        Profile gabbyAlonso = new Profile("Gabby Alonso", true, gabbyDialogues, gabbyOptions, 2, 25, gabbyHobbies, "Madrid, Spain", "Software Engineer");
+        List<Responses> gabbyResponses0 = Arrays.asList(
+            new Responses(
+                "Wow, sounds awesome! What exactly are you doing in the project? Is it a public project you’d be willing to share more details on?",
+                "That sounds great, but a little vague. What’s your role in this project?"
+            ),
+            new Responses(
+                "That makes sense, but what does your day-to-day look like?",
+                "Sure, but are there any released or open projects you could talk about?"
+            ),
+            new Responses(
+                "I see.",
+                "Hmm, okay."
+            )
+        );
+
+        List<Responses> gabbyResponses1 = Arrays.asList(
+            new Responses(
+                "I understand. Could we at least do a voice call?",
+                "Totally get it. Maybe just an audio call then?"
+            )
+        );
+
+        List<Responses> gabbyResponses2 = Arrays.asList(
+            new Responses(
+                "That’s unfortunate, landscape pictures are cool but it’d be a lot more interesting to see you in the pictures too!",
+                "Could you send a selfie too? Just curious who I’m talking to."
+            )
+        );
+
+        List<Responses> gabbyResponses3 = Arrays.asList(
+            new Responses(
+                "I’m not sure if we should be rushing into things, we’ve barely even talked! Let’s keep conversations on this app for now.",
+                "I think we should take more time to get to know each other."
+            )
+        );
+
+        List<List<Responses>> gabbyResponsesAll = Arrays.asList(
+            gabbyResponses0,
+            gabbyResponses1,
+            gabbyResponses2,
+            gabbyResponses3
+        );
+
+        Profile gabbyAlonso = new Profile("Gabby Alonso", true, gabbyDialogues, gabbyOptions, gabbyResponsesAll, 2, 25, gabbyHobbies, "Madrid, Spain", "Software Engineer");
 
          // Sample Profile 4: Daniel Rivera (Real Person)
         Map<String, List<String>> danielDialogues = new HashMap<>();
@@ -166,7 +295,54 @@ public class ProfileService {
                 "What are you looking for in a relationship?"
         );
 
-        Profile danielRivera = new Profile("Daniel Rivera", false, danielDialogues, danielOptions, 3, 34, danielHobbies, "Seattle, Washington", "Software Developer at mid-sized healthcare startup");
+        List<Responses> danielResponses0 = Arrays.asList(
+            new Responses(
+                "Very cool! What’s your role in all of that?",
+                "That sounds really interesting! What kind of programs are you working on right now?"
+            )
+        );
+
+        List<Responses> danielResponses1 = Arrays.asList(
+            new Responses(
+                "That works for me!",
+                "Same here, how does 8pm sound?"
+            )
+        );
+
+        List<Responses> danielResponses2 = Arrays.asList(
+            new Responses(
+                "That sounds awesome! I love hiking too.",
+                "I’ve never been to Washington! What’s it like to hike there?"
+            ),
+            new Responses(
+                "Sounds like a perfect way to spend your weekend!",
+                "Wow, this is making me want to visit!"
+            )
+        );
+
+        List<Responses> danielResponses3 = Arrays.asList(
+            new Responses(
+                "That sounds similar to what I’m looking for!",
+                "That makes sense, it’s good to know the other person really well and not rush into a relationship."
+            ),
+            new Responses(
+               "I agree with you, I want to get to know someone pretty well before I get into a relationship.",
+               "We seem to have similar views! I don’t like to rush into things, I’d rather take the time to understand someone before getting into a relationship."
+            ),
+            new Responses(
+                "That sounds amazing! Let’s talk more about the place and a good time.",
+                "I’d love the chance to meet you in person!"
+            )
+        );
+
+        List<List<Responses>> danielResponsesAll = Arrays.asList(
+            danielResponses0,
+            danielResponses1,
+            danielResponses2,
+            danielResponses3
+        );
+
+        Profile danielRivera = new Profile("Daniel Rivera", false, danielDialogues, danielOptions, danielResponsesAll, 3, 34, danielHobbies, "Seattle, Washington", "Software Developer at mid-sized healthcare startup");
 
         // Add profiles
         profiles.put(0, michaelCarter);
@@ -200,5 +376,10 @@ public class ProfileService {
         Profile profile = getProfileById(profileId);
         return profile.getUserOptions();
     }
+
+    public List<List<Responses>> getUserResponses(int profileId) {
+        Profile profile = getProfileById(profileId);
+        return profile.getUserResponses();
+    }   
 }
 

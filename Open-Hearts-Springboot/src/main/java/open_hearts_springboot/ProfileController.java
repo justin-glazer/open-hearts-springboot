@@ -49,4 +49,16 @@ public class ProfileController {
         List<String> userOptions = profileService.getUserOptions(profileId);
         return ResponseEntity.ok(userOptions);
     }
+
+    /*
+	 * Retrieves a list of lists, with each list containing pairs of user responses to 
+     * profile dialogue
+	 */
+	@GetMapping("/userResponses")
+    public ResponseEntity<List<List<Responses>>> getUserResponses(
+		@RequestParam int profileId
+    ) {
+        List<List<Responses>> userResponses = profileService.getUserResponses(profileId);
+        return ResponseEntity.ok(userResponses);
+    }
 }
