@@ -20,6 +20,9 @@ public class ProfileController {
         this.profileService = profileService;
     }
 
+    /*
+     * Retrieves a random profile from the database
+     */
 	@GetMapping("/profile")
     public ResponseEntity<Profile> getRandomProfile() {
         Profile profile = profileService.getRandomProfile();
@@ -60,5 +63,16 @@ public class ProfileController {
     ) {
         List<List<Responses>> userResponses = profileService.getUserResponses(profileId);
         return ResponseEntity.ok(userResponses);
+    }
+
+    /*
+	 * Retrieves a list of possible endings for the profile; success or failure
+	 */
+	@GetMapping("/ending")
+    public ResponseEntity<String> getEnding(
+		@RequestParam int profileId
+    ) {
+        String ending = profileService.getEnding(profileId);
+        return ResponseEntity.ok(ending);
     }
 }

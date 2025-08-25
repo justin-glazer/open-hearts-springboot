@@ -10,9 +10,11 @@ public class Profile {
     private String name, location, career;
     private List<String> hobbies;
     private int profileId, age;
-    private boolean scammer; //bool for if they are a scammer or not
-    Map<String, List<String>> dialogues; // Holds all dialogues for this profile
-    List<String> userOptions; // Holds all user options for this profile
+    private boolean scammer;
+    Map<String, List<String>> dialogues; // Holds all profile-side dialogues
+    List<String> userOptions; // Represents the initial menu options for the user, decides which dialogue branch to take
+    String ending; // A paragraph of red flags/green flags to be displayed in the ending screen
+
     /*
      * Holds a list for every conversation the user can have with this profile
      * Each list contains pairs of user responses to profile dialogue, represented
@@ -20,6 +22,9 @@ public class Profile {
      */
     List<List<Responses>> userResponses;
 
+    /*
+     * Default constructor (should not be used)
+     */
     public Profile() {
         this.name = "";
         this.scammer = false;
@@ -31,9 +36,13 @@ public class Profile {
         this.career = "";
         this.userOptions = new ArrayList<>();
         this.userResponses = new ArrayList<>();
+        this.ending = "";
     }
 
-    public Profile(String name, boolean scammer, Map<String, List<String>> dialogues, List<String> userOptions, List<List<Responses>> userResponses, int profileId, int age, List<String> hobbies, String location, String career) {
+    /*
+     * Full constructor (initialized in ProfileService.java)
+     */
+    public Profile(String name, boolean scammer, Map<String, List<String>> dialogues, List<String> userOptions, String ending, List<List<Responses>> userResponses, int profileId, int age, List<String> hobbies, String location, String career) {
         this.name = name;
         this.scammer = scammer;
         this.dialogues = dialogues;
@@ -44,6 +53,7 @@ public class Profile {
         this.career = career;
         this.userOptions = userOptions;
         this.userResponses = userResponses;
+        this.ending = ending;
     }
 
     public String getName() {
@@ -92,6 +102,10 @@ public class Profile {
 
     public List<List<Responses>> getUserResponses() {
         return this.userResponses;
+    }
+
+    public String getEnding() {
+        return this.ending;
     }
 }
 

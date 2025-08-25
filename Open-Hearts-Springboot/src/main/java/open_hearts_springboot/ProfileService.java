@@ -18,6 +18,10 @@ public class ProfileService {
         this.profiles = new HashMap<>();
 
         // Sample Profile 1: Michael Carter (Scammer)
+
+        /*
+         * A hashmap containing four branches of dialogue for the profile
+         */
         Map<String, List<String>> michaelDialogues = new HashMap<>();
         michaelDialogues.put("option0", Arrays.asList(
             "I do a lot of different projects as a civil engineer. Right now, I’m working with a client to finish a construction project that’s been in development for over a year.",
@@ -38,6 +42,7 @@ public class ProfileService {
             "Do you think I’d say these things if I didn’t mean them? I know this feels fast, but when it’s right, you just know."
         ));
 
+        // Contains a list of hobbies for the profile
         List<String> michaelHobbies = Arrays.asList(
             "Traveling",
             "Cooking (especially Italian food)",
@@ -48,6 +53,11 @@ public class ProfileService {
             "Watching documentaries"
         );
 
+        /*
+         * Contains a list of user options for the initial menu only, each string 
+         * represents a different dialogue branch
+         */
+        
         List<String> michaelOptions = Arrays.asList(
             "Hey there Michael! I see that you're an international civil engineer. What exactly do you do for work?",
             "Hi, nice to meet you Michael! Do you want to do a video call to get to know each other?",
@@ -55,6 +65,10 @@ public class ProfileService {
             "What are you looking for in a relationship?"
         );
 
+        /*
+         * Each list holds pairs of user responses (represented by the Responses class)
+         * to profile dialogue, corresponding to the numbered dialogue branches above
+         */
         List<Responses> michaelResponses0 = Arrays.asList(
             new Responses(
                 "Wow, sounds awesome! What exactly are you doing in the project? Is it a public project you’d be willing to share more details on?",
@@ -95,6 +109,7 @@ public class ProfileService {
             )
         );
 
+        // Groups all the response lists into one list of lists
         List<List<Responses>> michaelResponsesAll = Arrays.asList(
             michaelResponses0,
             michaelResponses1,
@@ -102,7 +117,15 @@ public class ProfileService {
             michaelResponses3
         );
 
-        Profile michaelCarter = new Profile("Michael Carter", true, michaelDialogues, michaelOptions, michaelResponsesAll, 0, 46, michaelHobbies, "Houston, Texas", "International Civil Engineer");
+        // Create text for the success and failure ending screens
+        String michaelEnding = 
+            "First, he displayed inconsistent or vague personal details when he avoided going into detail about his work or share photos. " + 
+            "Second, Michael made urgent requests for money or financial help. Although this would typically happen later in the relationship in a real-life situation, be sure to keep an eye out. " +
+            "Third, he displayed avoidance of in-person meets or video calls by claiming a bad signal. " +
+            "Finally, he made rapid and intense declarations of love, claiming he felt 'an instant connection' with you. ";
+            
+        // Initializes the profile for Michael Carter
+        Profile michaelCarter = new Profile("Michael Carter", true, michaelDialogues, michaelOptions, michaelEnding, michaelResponsesAll, 0, 46, michaelHobbies, "Houston, Texas", "International Civil Engineer");
 
         // Sample Profile 2: Sarah Lin (Real Person)
         Map<String, List<String>> sarahDialogues = new HashMap<>();
@@ -179,7 +202,15 @@ public class ProfileService {
             sarahResponses3
         );
 
-        Profile sarahLin = new Profile("Sarah Lin", false, sarahDialogues, sarahOptions, sarahResponsesAll, 1, 31, sarahHobbies, "Arlington, Virginia", "Epidemiologist");
+        // Create text for the success and failure ending screens
+        String sarahEnding = 
+            "First, she was able to explain her work and hobbies in detail without being too vague. " + 
+            "Second, she was open to making a video call, not avoiding face-to-face interactions. " +
+            "Third, she stated that she did not want to rush the relationship, instead preferring to get to know you better. " +
+            "Finally, Sarah did not make any attempt to move off-platform or have you send money. " +
+            "Sarah is not a scammer, but make sure to be careful on online dating platforms; scammers may not display their true nature early on.";
+
+        Profile sarahLin = new Profile("Sarah Lin", false, sarahDialogues, sarahOptions, sarahEnding, sarahResponsesAll, 1, 31, sarahHobbies, "Arlington, Virginia", "Epidemiologist");
 
         // Sample Profile 3: Gabby Alonso (Scammer)
         Map<String, List<String>> gabbyDialogues = new HashMap<>();
@@ -257,7 +288,14 @@ public class ProfileService {
             gabbyResponses3
         );
 
-        Profile gabbyAlonso = new Profile("Gabby Alonso", true, gabbyDialogues, gabbyOptions, gabbyResponsesAll, 2, 25, gabbyHobbies, "Madrid, Spain", "Software Engineer");
+        // Create text for the success and failure ending screens
+        String gabbyEnding = 
+            "First, she displayed inconsistent or vague personal details when she avoided going into detail about her work and shared generic pictures of Madrid found on the Internet. " + 
+            "Second, she displayed avoidance of in-person meets or video calls by sharing that she feels anxious about video calls." +
+            "Third, Gabby displayed rapid and intense declarations of love when she emphasized that you and her would be a great match without talking for a long time. " +
+            "Finally, she made attempts to move off-platform, claiming she knows a 'great encrypted app'. ";
+
+        Profile gabbyAlonso = new Profile("Gabby Alonso", true, gabbyDialogues, gabbyOptions, gabbyEnding, gabbyResponsesAll, 2, 25, gabbyHobbies, "Madrid, Spain", "Software Engineer");
 
          // Sample Profile 4: Daniel Rivera (Real Person)
         Map<String, List<String>> danielDialogues = new HashMap<>();
@@ -342,7 +380,15 @@ public class ProfileService {
             danielResponses3
         );
 
-        Profile danielRivera = new Profile("Daniel Rivera", false, danielDialogues, danielOptions, danielResponsesAll, 3, 34, danielHobbies, "Seattle, Washington", "Software Developer at mid-sized healthcare startup");
+        // Create text for the success and failure ending screens
+        String danielEnding = 
+            "First, he was able to explain his work and hobbies in detail without being too vague. " + 
+            "Second, he was open to making a video call, not avoiding face-to-face interactions. " +
+            "Third, he stated that he did not want to rush the relationship, instead preferring something meaningful that grows over time. " +
+            "Finally, Daniel did not make any attempt to move off-platform or have you send money. " +
+            "Daniel is not a scammer, but make sure to be careful on online dating platforms; scammers may not display their true nature early on.";
+
+        Profile danielRivera = new Profile("Daniel Rivera", false, danielDialogues, danielOptions, danielEnding, danielResponsesAll, 3, 34, danielHobbies, "Seattle, Washington", "Software Developer at mid-sized healthcare startup");
 
         // Add profiles
         profiles.put(0, michaelCarter);
@@ -372,14 +418,22 @@ public class ProfileService {
         return profiles.get(index);
     }
 
+    // Returns the full list of profile-specific user options for the initial menu
     public List<String> getUserOptions(int profileId) {
         Profile profile = getProfileById(profileId);
         return profile.getUserOptions();
     }
 
+    // Returns all lists containing pairs of user responses to profile dialogue
     public List<List<Responses>> getUserResponses(int profileId) {
         Profile profile = getProfileById(profileId);
         return profile.getUserResponses();
     }   
+
+    // Returns ending screen text for the profile
+    public String getEnding(int profileId) {
+        Profile profile = getProfileById(profileId);
+        return profile.getEnding();
+    }
 }
 

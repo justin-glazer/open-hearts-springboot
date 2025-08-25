@@ -1,7 +1,7 @@
 package open_hearts_springboot;
 
 /**
- * Represents a pair of user responses to the profile dialogue.
+ * Represents a pair of user responses to the profile dialogue
  * Can be expanded to include more choices or additional functionality in the future.
  */
 public class Responses {
