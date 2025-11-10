@@ -16,6 +16,8 @@ public class CorsConfig {
             @Override
             @NonNull
             public void addCorsMappings(CorsRegistry registry) {
+                String vercelUrl = "https://open-hearts-exhibit.vercel.app/";
+
                 registry.addMapping("/**") // Apply to all endpoints
                         .allowedOrigins("http://localhost:3000") // Your frontend origin
                         .allowedMethods("*")
