@@ -19,7 +19,7 @@ public class CorsConfig {
                 String vercelUrl = "https://open-hearts-exhibit.vercel.app/";
 
                 registry.addMapping("/**") // Apply to all endpoints
-                        .allowedOrigins("http://localhost:3000") // Your frontend origin
+                        .allowedOrigins(vercelUrl, "http://localhost:3000") // Your frontend origin
                         .allowedMethods("*")
                         .allowedHeaders("*")
                         .allowCredentials(true); // if you're using cookies or auth headers
